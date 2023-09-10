@@ -25,16 +25,18 @@ async function mostramePais(pais) {
 
     data.forEach(element => {
       resultado.innerHTML += `
+      <div class="estilo">
         <h1> ${element.name.common}</h1>
         <img src="${element.flags.png}"/>
         <h1> Nombre oficial : ${element.translations.spa.official}</h1>
         <h2> Capital: ${element.capital[0]}</h2>
         <h3> Continente: ${element.continents[0]}</h3>
         <h3> Lenguaje : ${element.languages.spa}</h3>
-      `;
+        </div>
+        `;
     });
   } catch (error) {
-    resultado.innerHTML += "Error mostrando el país, pruebe en ingles";
+    resultado.innerHTML += "<div class='estilo'>Error mostrando el país, pruebe en ingles</div>";
   }
 }
 
